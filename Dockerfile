@@ -3,7 +3,7 @@ FROM node:16
 WORKDIR /bodo_web/
 COPY . .
 
-RUN yarn && yarn build
+RUN yarn config set registry https://registry.npmmirror.com && yarn && yarn build
 
 FROM nginx:alpine
 LABEL MAINTAINER="wangrui19970405@gmail.com"
